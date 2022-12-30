@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+    paths:
+      - '**.php'
   pull_request:
 
 jobs:
@@ -41,6 +43,6 @@ jobs:
 
       - name: Install Composer dependencies
         run: composer install --no-interaction --no-progress --prefer-dist
-      
+
       - name: Run tests
         run: ./vendor/bin/pest

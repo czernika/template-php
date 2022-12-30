@@ -8,14 +8,6 @@
 - Add description and keywords
 - Change autoloader
 
-### Remote Repository
-
-- Create labels for PRs and Issues
-- Open discussions
-- Create release `v1.0.0`
-
-...
-
 ## Installation
 
 ...
@@ -24,10 +16,13 @@
 
 ...
 
-
 ## Testing
 
-...
+We're using [Pest](https://pestphp.com/) testing library
+
+```
+./vendor/bin/pest
+```
 
 ## License
 

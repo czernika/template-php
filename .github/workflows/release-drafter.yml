@@ -11,7 +11,7 @@ jobs:
 
     permissions:
       contents: write
-    
+
     steps:
       # PR based Release Drafter
       - name: Get Current Date
@@ -20,7 +20,8 @@ jobs:
           export DATE=$(date "+%d.%m.%Y")
           echo "date=${DATE}" >> $GITHUB_OUTPUT
 
-      - uses: release-drafter/release-drafter@v5
+      - name: Create draft release
+        uses: release-drafter/release-drafter@v5
         with:
           header: |
             ### Release Date: ${{ steps.calver.outputs.date }}
