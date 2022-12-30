@@ -1,6 +1,6 @@
 # PHP Template
 
-[![Tests](/actions/workflows/tests.yml/badge.svg)](/actions/workflows/tests.yml) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
+[![Tests](https://github.com/czernika/template-php/actions/workflows/tests.yml/badge.svg)](https://github.com/czernika/template-php/actions/workflows/tests.yml) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
 ## TODO
 
@@ -9,6 +9,10 @@
 - Change package name
 - Add description and keywords
 - Change autoloader
+
+### Readme
+
+- Update badges with correct `[REPOSITORY]` name 
 
 ## Installation
 
