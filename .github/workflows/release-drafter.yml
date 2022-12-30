@@ -1,0 +1,29 @@
+name: Create Release Draft
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  update_release_draft:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+    
+    steps:
+      # PR based Release Drafter
+      - name: Get Current Date
+        id: calver
+        run: |
+          export DATE=$(date "+%d.%m.%Y")
+          echo "date=${DATE}" >> $GITHUB_OUTPUT
+
+      - uses: release-drafter/release-drafter@v5
+        with:
+          header: |
+            ### Release Date: ${{ steps.calver.outputs.date }}
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

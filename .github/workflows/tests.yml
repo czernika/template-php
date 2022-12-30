@@ -1,0 +1,46 @@
+name: Running Tests
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  testing:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: true
+      matrix:
+        php-version: ['8.0', '8.1', '8.2']
+
+    name: Run tests for PHP ${{ matrix.php-version }}
+
+    steps:
+      - name: Check out the source code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          tools: composer:v2
+          coverage: none
+
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: |
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Install Composer dependencies
+        run: composer install --no-interaction --no-progress --prefer-dist
+      
+      - name: Run tests
+        run: ./vendor/bin/pest

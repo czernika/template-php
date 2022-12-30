@@ -1,0 +1,44 @@
+name-template: "v$RESOLVED_VERSION"
+tag-template: "v$RESOLVED_VERSION"
+category-template: '### $TITLE'
+template: |
+
+  ## :eyes: What's new
+
+  $CHANGES
+
+  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
+change-template: "- $TITLE ([#$NUMBER]($URL)) by @$AUTHOR"
+no-changes-template: "* Minor changes"
+
+categories:
+  - title: ":rocket: Features"
+    labels:
+      - "feat"
+  - title: ":bug: Bug Fixes"
+    labels:
+      - "bug"
+  - title: ":heavy_check_mark: Tests"
+    labels:
+      - "tests"
+  - title: ":sparkles: Refactors"
+    labels:
+      - "refactor"
+  - title: ":blue_book: Docs"
+    labels:
+      - "docs"
+  - title: "Other Changes"
+
+version-resolver:
+  major:
+    labels:
+      - "major"
+      - "breaking"
+  minor:
+    labels:
+      - "minor"
+      - "feat"
+  default: patch
+
+exclude-labels:
+  - "skip-changelog"

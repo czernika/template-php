@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<ruleset name="Kawa">
+    <description>Kawa Coding Standards</description>
+
+    <!-- Scan core -->
+    <file>src</file>
+
+    <!-- Scan only PHP files -->
+    <arg name="extensions" value="php"></arg>
+
+    <!-- Show progression -->
+    <arg value="p"/>
+
+	<!-- Enable colors in report -->
+    <arg name="colors"/>
+
+    <!-- Add source codes in the report -->
+    <arg value="s"/>
+
+    <!-- Default tab width for indentation fixes and such -->
+	<arg name="tab-width" value="4"/>
+
+    <rule ref="PSR12">
+        <exclude name="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore"></exclude>
+        <exclude name="PSR12.Traits.UseDeclaration.MultipleImport"></exclude>
+    </rule>
+
+    <rule ref="PSR1">
+        <!-- Allow config files -->
+        <exclude name="PSR1.Files.SideEffects"></exclude>
+    </rule>
+
+	<!-- Lines can be N chars long (warnings), errors at M chars -->
+	<rule ref="Generic.Files.LineLength">
+		<properties>
+			<property name="lineLimit" value="300"/>
+			<property name="absoluteLineLimit" value="500"/>
+		</properties>
+	</rule>
+</ruleset>
