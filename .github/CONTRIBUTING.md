@@ -92,7 +92,7 @@ Enhancement suggestions are tracked as [GitHub issues](/issues) labeled as "Feat
 We are using [Pest](https://pestphp.com/) library for unit tests. Make sure all tests being passed. If possible create a new test cases or modify existing ones for you new features
 
 ```sh
-./vendor/bn/pest
+./vendor/bin/pest
 ```
 
 ### Styling
@@ -100,9 +100,9 @@ We are using [Pest](https://pestphp.com/) library for unit tests. Make sure all 
 Make sure there are no errors for PHP Code Sniffer
 
 ```sh
-./vendor/bn/phpcs ./src
+./vendor/bin/phpcs ./src
 
-./vendor/bn/phpcbf ./src
+./vendor/bin/phpcbf ./src
 ```
 
 ### Commit message
