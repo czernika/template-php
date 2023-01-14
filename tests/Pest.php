@@ -11,7 +11,7 @@
 |
 */
 
-// uses(Tests\TestCase::class)->in('Feature');
+uses(Wolat\Tests\TestCase::class)->in('Unit');
 
 /*
 |--------------------------------------------------------------------------

@@ -26,6 +26,11 @@
       "Wolat\\": "src/core"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Wolat\\Tests\\": "tests/"
+    }
+  },
   "config": {
     "allow-plugins": {
       "pestphp/pest-plugin": true,
