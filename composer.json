@@ -1,8 +1,9 @@
 {
   "name": "czernika/name",
-  "type": "package",
-  "license": "MIT",
   "description": "DESCRIPTION",
+  "license": "MIT",
+  "type": "package",
+  "keywords": [],
   "authors": [
     {
       "name": "Aliakseyenka Ihar",
@@ -10,20 +11,13 @@
       "homepage": "https://github.com/czernika"
     }
   ],
-  "keywords": [],
   "require": {
     "php": "^8.0"
   },
   "require-dev": {
+    "ergebnis/composer-normalize": "^2.29",
     "pestphp/pest": "^1.22",
     "squizlabs/php_codesniffer": "^3.7"
-  },
-  "config": {
-    "optimize-autoloader": true,
-    "preferred-install": "dist",
-    "allow-plugins": {
-      "pestphp/pest-plugin": true
-    }
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
@@ -31,5 +25,13 @@
     "psr-4": {
       "Wolat\\": "src/core"
     }
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true,
+      "ergebnis/composer-normalize": true
+    },
+    "optimize-autoloader": true,
+    "preferred-install": "dist"
   }
 }
